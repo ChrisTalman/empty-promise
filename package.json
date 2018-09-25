@@ -1,7 +1,7 @@
 {
 	"name": "@bluecewe/empty-promise",
 	"description": "Generates a promise which can be externally controlled.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license": "UNLICENSED",
 	"main": "index.js",
 	"private": true,

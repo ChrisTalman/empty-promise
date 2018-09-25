@@ -6,7 +6,7 @@ declare module '@bluecewe/empty-promise'
 	    resolve?: Resolve<GenericResolveValue>;
 	    reject?: Reject<GenericRejectValue>;
 	}
-	export class EmptyPromise<GenericResolveValue, GenericRejectValue> extends Promise<GenericResolveValue> {
+	export default class EmptyPromise<GenericResolveValue, GenericRejectValue> extends Promise<GenericResolveValue> {
 	    resolve: Resolve<GenericResolveValue>;
 	    reject: Reject<GenericRejectValue>;
 	    constructor(executor: any);

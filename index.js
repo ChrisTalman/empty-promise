@@ -100,11 +100,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/*! exports provided: EmptyPromise */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"EmptyPromise\", function() { return EmptyPromise; });\n\r\n;\r\nclass EmptyPromise extends Promise {\r\n    constructor(executor) {\r\n        super(executor);\r\n    }\r\n    ;\r\n    static generate() {\r\n        let settlers = {};\r\n        const promise = new this(function (resolve, reject) {\r\n            settlers =\r\n                {\r\n                    resolve,\r\n                    reject\r\n                };\r\n        });\r\n        promise.resolve = settlers.resolve;\r\n        promise.reject = settlers.reject;\r\n        return promise;\r\n    }\r\n    ;\r\n}\r\n;\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return EmptyPromise; });\n\r\n;\r\nclass EmptyPromise extends Promise {\r\n    constructor(executor) {\r\n        super(executor);\r\n    }\r\n    ;\r\n    static generate() {\r\n        let settlers = {};\r\n        const promise = new this(function (resolve, reject) {\r\n            settlers =\r\n                {\r\n                    resolve,\r\n                    reject\r\n                };\r\n        });\r\n        promise.resolve = settlers.resolve;\r\n        promise.reject = settlers.reject;\r\n        return promise;\r\n    }\r\n    ;\r\n}\r\n;\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ })
 

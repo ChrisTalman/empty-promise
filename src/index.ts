@@ -10,7 +10,7 @@ export interface Settlers <GenericResolveValue, GenericRejectValue>
 };
 
 /** An empty extended Promise with exposed control methods. */
-export class EmptyPromise <GenericResolveValue, GenericRejectValue> extends Promise <GenericResolveValue>
+export default class EmptyPromise <GenericResolveValue, GenericRejectValue> extends Promise <GenericResolveValue>
 {
 	public resolve: Resolve <GenericResolveValue>;
 	public reject: Reject <GenericRejectValue>;
