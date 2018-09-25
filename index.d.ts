@@ -1,8 +1,15 @@
 declare module '@bluecewe/empty-promise'
 {
-	export default class EmptyPromise <ResolutionType> implements Promise <ResolutionType>
-    {
-        then();
-        catch();
-    }
+	export type Resolve<Value> = (value?: Value) => void;
+	export type Reject<Reason> = (reason: Reason) => void;
+	export interface Settlers<GenericResolveValue, GenericRejectValue> {
+	    resolve?: Resolve<GenericResolveValue>;
+	    reject?: Reject<GenericRejectValue>;
+	}
+	export class EmptyPromise<GenericResolveValue, GenericRejectValue> extends Promise<GenericResolveValue> {
+	    resolve: Resolve<GenericResolveValue>;
+	    reject: Reject<GenericRejectValue>;
+	    constructor(executor: any);
+	    static generate<GenericResolveValue, GenericRejectValue>(): EmptyPromise<GenericResolveValue, GenericRejectValue>;
+	}
 }

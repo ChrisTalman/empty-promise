@@ -13,9 +13,9 @@
         "removeComments": true,
         "downlevelIteration": true,
         "alwaysStrict": true,
-        "allowJs": true,
         "allowSyntheticDefaultImports": true,
-        "allowUnreachableCode": true
+        "allowUnreachableCode": true,
+		"declaration": true
     },
     "include":
     [

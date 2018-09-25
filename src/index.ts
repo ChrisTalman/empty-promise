@@ -1,38 +1,41 @@
 'use strict';
 
 // Types
-type Resolve <Value> = (value?: Value) => void;
-type Reject = (reason: any) => void;
+export type Resolve <Value> =  (value?: Value) => void;
+export type Reject <Reason> =  (reason: Reason) => void;
+export interface Settlers <GenericResolveValue, GenericRejectValue>
+{
+	resolve?: Resolve <GenericResolveValue>;
+	reject?: Reject <GenericRejectValue>;
+};
 
 /** An empty extended Promise with exposed control methods. */
-export class EmptyPromise <ResolutionType> extends Promise <ResolutionType>
+export class EmptyPromise <GenericResolveValue, GenericRejectValue> extends Promise <GenericResolveValue>
 {
-	public resolve: Resolve <ResolutionType>;
-	public reject: Reject;
+	public resolve: Resolve <GenericResolveValue>;
+	public reject: Reject <GenericRejectValue>;
 	/** Constructor. */
 	constructor(executor)
 	{
 		super(executor);
 	};
 	/** Returns a new empty promise with its resolve() and reject() methods exposed. */
-	static generate <ResolutionType> ()
+	static generate <GenericResolveValue, GenericRejectValue> ()
 	{
-		interface Resolvers
-		{
-			resolve?: Resolve <ResolutionType>;
-			reject?: Reject;
-		};
-		const resolvers: Resolvers = {};
-		const promise = new this <ResolutionType>
+		let settlers: Settlers <GenericResolveValue, GenericRejectValue> = {};
+		const promise = new this <GenericResolveValue, GenericRejectValue>
 		(
-			function(resolve: Resolve <ResolutionType>, reject: Reject)
+			function(resolve: Resolve <GenericResolveValue>, reject: Reject <GenericRejectValue>)
 			{
-				resolvers.resolve = resolve;
-				resolvers.reject = reject;
+				settlers =
+				{
+					resolve,
+					reject
+				};
 			}
 		);
-		promise.resolve = resolvers.resolve;
-		promise.reject = resolvers.reject;
+		promise.resolve = settlers.resolve;
+		promise.reject = settlers.reject;
 		return promise;
 	};
 };
