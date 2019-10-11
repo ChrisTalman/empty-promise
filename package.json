@@ -11,5 +11,6 @@
 	},
 	"scripts": {
 		"build": "./node_modules/.bin/webpack"
-	}
+	},
+	"main": "./index.js"
 }
