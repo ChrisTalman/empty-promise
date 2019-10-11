@@ -1,4 +1,4 @@
-declare module '@bluecewe/empty-promise'
+declare module '@ChrisTalman/empty-promise'
 {
 	export type Resolve<Value> = (value?: Value) => void;
 	export type Reject<Reason> = (reason: Reason) => void;
