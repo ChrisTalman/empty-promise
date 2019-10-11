@@ -1,10 +1,7 @@
 {
-	"name": "@bluecewe/empty-promise",
+	"name": "@ChrisTalman/empty-promise",
 	"description": "Generates a promise which can be externally controlled.",
 	"version": "0.1.1",
-	"license": "UNLICENSED",
-	"main": "index.js",
-	"private": true,
 	"devDependencies": {
 		"ts-loader": "^4.4.2",
 		"typescript": "^2.9.2",
@@ -13,6 +10,6 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"scripts": {
-		"build": ".\\node_modules\\.bin\\webpack"
+		"build": "./node_modules/.bin/webpack"
 	}
 }
